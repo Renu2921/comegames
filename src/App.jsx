@@ -7,6 +7,7 @@ import Bonuses from './pages/Bonuses'
 import Complaints from './pages/Complaints'
 import News from './pages/News'
 import About from './pages/About'
+import NotFound from './pages/NotFound'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/news" element={<News/>}/>
       <Route path="/about" element={<About/>}/>
       </Route>
+       <Route path="*" element={<NotFound />} />
       </Routes>
   
   )
