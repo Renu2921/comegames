@@ -1,5 +1,5 @@
 import React from "react";
-import comeLogo from "../assets/comeLogo.png";
+import comeLogo from "../assets/comeLogo.webp";
 
 const Footer = () => {
   return (

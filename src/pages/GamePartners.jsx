@@ -1,11 +1,11 @@
 import React from "react";
 
-import game1 from "../assets/game1.png";
-import game2 from "../assets/game2.png";
-import game3 from "../assets/game3.png";
-import game4 from "../assets/game4.png";
-import game5 from "../assets/game5.png";
-import game6 from "../assets/game6.png";
+import game1 from "../assets/game1.webp";
+import game2 from "../assets/game2.webp";
+import game3 from "../assets/game3.webp";
+import game4 from "../assets/game4.webp";
+import game5 from "../assets/game5.webp";
+import game6 from "../assets/game6.webp";
 
 const games = [
   {

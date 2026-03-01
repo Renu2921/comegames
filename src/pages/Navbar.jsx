@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import comeLogo from "../assets/comeLogo.png";
+import comeLogo from "../assets/comeLogo.webp";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = ({ openPopup }) => {

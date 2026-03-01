@@ -1,5 +1,5 @@
 import React from "react";
-import merge from "../assets/merge.png";
+import merge from "../assets/merge.webp";
 
 const Bonus = () => {
   return (

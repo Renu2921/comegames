@@ -1,29 +1,25 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Body from './pages/Body'
-import Home from './pages/Home'
-import Casino from './pages/Casino'
-import Bonuses from './pages/Bonuses'
-import Complaints from './pages/Complaints'
-import News from './pages/News'
-import About from './pages/About'
-import NotFound from './pages/NotFound'
+import React, { Suspense, lazy } from "react"
+import { Route, Routes } from "react-router-dom"
+import Fallback from "./pages/Fallback"
+
+// Lazy load pages
+const Body = lazy(() => import("./pages/Body"))
+const Home = lazy(() => import("./pages/Home"))
+const About = lazy(() => import("./pages/About"))
+const NotFound = lazy(() => import("./pages/NotFound"))
 
 const App = () => {
   return (
-  
+    <Suspense fallback={<Fallback/>}>
       <Routes>
-      <Route path="/" element={<Body/>}>
-      <Route index element={<Home/>}/>
-      <Route path="/casinos" element={<Casino/>}/>
-      <Route path="/bonuses" element={<Bonuses/>}/>
-      <Route path="/complaints" element={<Complaints/>}/>
-      <Route path="/news" element={<News/>}/>
-      <Route path="/about" element={<About/>}/>
-      </Route>
-       <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Body />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
-  
+    </Suspense>
   )
 }
 

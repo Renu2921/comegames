@@ -1,6 +1,6 @@
 import React from "react";
-import comeLogo from "../assets/comeLogo.png";
-import girlImage from "../assets/girl.png";
+import comeLogo from "../assets/comeLogo.webp";
+import girlImage from "../assets/girl.webp";
 
 const WelcomePopup = ({ closePopup }) => {
   return (

@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import WelcomePopup from "./WelcomePopup";
+import Fallback from "./Fallback";
+
+const WelcomePopup = lazy(() => import("./WelcomePopup"));
 
 const Body = () => {
   const [showPopup, setShowPopup] = useState(true);
-
-  // Open immediately when site loads
-  useEffect(() => {
-    setShowPopup(true);
-  }, []);
 
   const openPopup = () => {
     setShowPopup(true);
@@ -22,7 +19,12 @@ const Body = () => {
 
   return (
     <div>
-      {showPopup && <WelcomePopup closePopup={closePopup} />}
+      {showPopup && (
+        <Suspense fallback={<Fallback/>}>
+          <WelcomePopup closePopup={closePopup} />
+        </Suspense>
+      )}
+
       <Navbar openPopup={openPopup} />
       <Outlet />
       <Footer />
